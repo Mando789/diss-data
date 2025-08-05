@@ -1,0 +1,248 @@
+{
+  "metadata": {
+    "framework": "Operating Model Design",
+    "description": "Comprehensive frameworks for designing high-performance operating models",
+    "version": "1.0",
+    "sources": ["McKinsey Organize to Value", "Target Operating Model Design", "Agile Operating Models"],
+    "application": "AI agent training for organizational structure optimization"
+  },
+  "definition": "An operating model defines how an organization creates and delivers value through its structure, processes, governance, and capabilities",
+  "mckinsey_organize_to_value": {
+    "source": "McKinsey Organize to Value Framework",
+    "description": "Comprehensive framework for designing high-performance operating models",
+    "elements": [
+      {
+        "element": "Strategy & Direction",
+        "description": "Clear strategic direction and value proposition",
+        "workflow_application": "Align travel approval strategy with business objectives",
+        "implementation": "Define approval policies that support business strategy",
+        "metrics": ["Strategic alignment score", "Policy compliance", "Business objective achievement"],
+        "optimization_focus": "Ensure all workflow decisions support strategic objectives",
+        "common_issues": ["Misaligned policies", "Strategy-execution gaps", "Unclear priorities"]
+      },
+      {
+        "element": "Structure & Governance",
+        "description": "Organizational structure and decision-making processes",
+        "workflow_application": "Define clear approval hierarchies and decision rights",
+        "implementation": "Create approval matrix with clear authority levels",
+        "metrics": ["Decision speed", "Clarity of roles", "Accountability measures"],
+        "optimization_focus": "Clear decision rights and appropriate spans of control",
+        "common_issues": ["Unclear authority", "Decision bottlenecks", "Role ambiguity"]
+      },
+      {
+        "element": "Processes & Systems",
+        "description": "Core business processes and supporting technology",
+        "workflow_application": "Standardize and optimize approval workflows",
+        "implementation": "Implement consistent approval processes with technology support",
+        "metrics": ["Process efficiency", "System utilization", "Automation rate"],
+        "optimization_focus": "Streamlined, technology-enabled processes",
+        "common_issues": ["Process fragmentation", "System gaps", "Manual overhead"]
+      },
+      {
+        "element": "People & Culture",
+        "description": "Talent, skills, and organizational culture",
+        "workflow_application": "Train approvers and travelers on efficient processes",
+        "implementation": "Develop capabilities and culture that support efficient approvals",
+        "metrics": ["Employee satisfaction", "Capability maturity", "Culture health"],
+        "optimization_focus": "Right capabilities and collaborative culture",
+        "common_issues": ["Skill gaps", "Poor culture", "Change resistance"]
+      },
+      {
+        "element": "Performance Management",
+        "description": "Metrics, incentives, and performance monitoring",
+        "workflow_application": "Measure and improve approval cycle times",
+        "implementation": "Implement KPIs and incentives that drive optimal behavior",
+        "metrics": ["KPI achievement", "Performance trends", "Incentive effectiveness"],
+        "optimization_focus": "Balanced metrics that drive right behaviors",
+        "common_issues": ["Wrong metrics", "Poor incentives", "Lack of measurement"]
+      }
+    ]
+  },
+  "target_operating_model_design": {
+    "description": "Framework for designing future-state operating models",
+    "components": [
+      {
+        "component": "Value Streams",
+        "description": "End-to-end processes that deliver value to customers",
+        "travel_application": "Map complete travel approval and reimbursement value stream",
+        "design_principles": ["Customer-centric", "End-to-end optimization", "Value focus"],
+        "optimization_strategies": ["Value stream mapping", "End-to-end ownership", "Customer journey optimization"],
+        "success_criteria": ["Customer satisfaction", "Value delivery time", "Process efficiency"]
+      },
+      {
+        "component": "Organizational Structure",
+        "description": "How roles, responsibilities, and reporting relationships are organized",
+        "travel_application": "Design approval hierarchy that balances control with speed",
+        "design_principles": ["Span of control optimization", "Clear accountability", "Minimal layers"],
+        "optimization_strategies": ["Flat hierarchies", "Clear RACI", "Appropriate delegation"],
+        "success_criteria": ["Decision speed", "Role clarity", "Accountability"]
+      },
+      {
+        "component": "Governance Model",
+        "description": "Decision-making frameworks and oversight mechanisms",
+        "travel_application": "Create approval governance that ensures compliance and efficiency",
+        "design_principles": ["Risk-based decisions", "Appropriate oversight", "Delegation frameworks"],
+        "optimization_strategies": ["Risk-based governance", "Delegation matrices", "Exception handling"],
+        "success_criteria": ["Risk management", "Decision quality", "Efficiency"]
+      },
+      {
+        "component": "Technology Architecture",
+        "description": "Systems and technology that enable the operating model",
+        "travel_application": "Implement travel systems that support streamlined approvals",
+        "design_principles": ["User experience focus", "Integration", "Automation where appropriate"],
+        "optimization_strategies": ["System integration", "User-centric design", "Intelligent automation"],
+        "success_criteria": ["User satisfaction", "System reliability", "Automation rate"]
+      },
+      {
+        "component": "Performance Framework",
+        "description": "Metrics and management systems that drive performance",
+        "travel_application": "KPIs that balance speed, compliance, and cost control",
+        "design_principles": ["Balanced scorecard", "Leading indicators", "Continuous improvement"],
+        "optimization_strategies": ["Balanced metrics", "Real-time monitoring", "Improvement loops"],
+        "success_criteria": ["KPI achievement", "Performance trends", "Improvement rate"]
+      }
+    ]
+  },
+  "agile_operating_model": {
+    "description": "Operating model design principles based on Agile methodology",
+    "characteristics": [
+      "Cross-functional teams with end-to-end accountability",
+      "Rapid decision-making with appropriate governance",
+      "Continuous improvement and adaptation",
+      "Customer-centric value delivery",
+      "Technology-enabled collaboration and automation"
+    ],
+    "implementation_patterns": [
+      {
+        "pattern": "Squad Model",
+        "description": "Small, autonomous teams with clear missions",
+        "travel_application": "Dedicated travel approval squads for different business units",
+        "benefits": ["Fast decision-making", "End-to-end accountability", "Customer focus"],
+        "implementation": "Create cross-functional teams responsible for specific approval types"
+      },
+      {
+        "pattern": "Platform Model",
+        "description": "Shared services and capabilities that enable agility",
+        "travel_application": "Common travel platform serving all business units",
+        "benefits": ["Economies of scale", "Consistent capability", "Rapid scaling"],
+        "implementation": "Develop shared travel approval platform with unit-specific configurations"
+      },
+      {
+        "pattern": "Network Model",
+        "description": "Dynamic collaboration across organizational boundaries",
+        "travel_application": "Flexible approval networks based on expertise and availability",
+        "benefits": ["Flexible resource allocation", "Knowledge sharing", "Rapid adaptation"],
+        "implementation": "Create dynamic approval networks that adapt to workload and expertise"
+      }
+    ]
+  },
+  "operating_model_violations": [
+    {
+      "violation": "unclear_decision_rights",
+      "description": "Ambiguous approval authority creates delays and confusion",
+      "detection_rule": "approval_escalations > 0.2 OR authority_conflicts > 0",
+      "threshold": "> 20% escalation rate OR any authority conflicts",
+      "optimization": "Clear RACI matrix, delegation frameworks, authority limits",
+      "framework_basis": "Operating Model: Structure & Governance",
+      "expected_improvement": "40-60% reduction in escalations",
+      "severity_scoring": {
+        "low": "escalation_rate < 0.1",
+        "medium": "escalation_rate 0.1-0.3",
+        "high": "escalation_rate > 0.3 OR authority_conflicts"
+      }
+    },
+    {
+      "violation": "misaligned_incentives",
+      "description": "Performance metrics don't encourage efficient approvals",
+      "detection_rule": "approval_speed_not_measured OR quality_only_focus",
+      "threshold": "Speed metrics missing OR unbalanced scorecard",
+      "optimization": "Balanced scorecard with speed and quality metrics",
+      "framework_basis": "Operating Model: Performance Management",
+      "expected_improvement": "30-50% performance improvement",
+      "severity_scoring": {
+        "low": "balanced_metrics_exist",
+        "medium": "some_metric_gaps",
+        "high": "poor_metric_design OR misaligned_incentives"
+      }
+    },
+    {
+      "violation": "inadequate_capabilities",
+      "description": "Approvers lack skills or tools for efficient processing",
+      "detection_rule": "training_gap_identified OR system_limitations == true",
+      "threshold": "Capability gaps identified OR poor tool support",
+      "optimization": "Capability development, system improvements, automation",
+      "framework_basis": "Operating Model: People & Capabilities",
+      "expected_improvement": "25-40% efficiency gains",
+      "severity_scoring": {
+        "low": "minor_capability_gaps",
+        "medium": "moderate_capability_issues",
+        "high": "significant_capability_gaps OR poor_systems"
+      }
+    },
+    {
+      "violation": "process_fragmentation",
+      "description": "Inconsistent processes across organization create inefficiency",
+      "detection_rule": "process_variations > 3 OR inconsistent_standards",
+      "threshold": "> 3 process variations OR no standard approach",
+      "optimization": "Process standardization with appropriate flexibility",
+      "framework_basis": "Operating Model: Processes & Systems",
+      "expected_improvement": "20-35% efficiency through standardization",
+      "severity_scoring": {
+        "low": "minor_variations",
+        "medium": "moderate_fragmentation",
+        "high": "significant_fragmentation OR no_standards"
+      }
+    },
+    {
+      "violation": "poor_governance",
+      "description": "Governance structure creates bottlenecks or gaps",
+      "detection_rule": "governance_bottlenecks OR oversight_gaps_identified",
+      "threshold": "Governance delays OR compliance issues",
+      "optimization": "Risk-based governance with appropriate oversight",
+      "framework_basis": "Operating Model: Governance",
+      "expected_improvement": "30-50% governance efficiency",
+      "severity_scoring": {
+        "low": "minor_governance_issues",
+        "medium": "moderate_governance_problems",
+        "high": "significant_governance_failures"
+      }
+    }
+  ],
+  "design_principles": {
+    "customer_centricity": "Design all processes around customer (employee) needs and experience",
+    "value_focus": "Optimize for value delivery rather than activity completion",
+    "simplicity": "Eliminate complexity that doesn't add value",
+    "agility": "Build in ability to adapt and change quickly",
+    "accountability": "Clear ownership and responsibility for outcomes",
+    "transparency": "Visible processes and performance for all stakeholders",
+    "continuous_improvement": "Built-in mechanisms for ongoing optimization",
+    "technology_enablement": "Leverage technology to enhance human capability"
+  },
+  "optimization_patterns": {
+    "span_of_control": {
+      "issue": "Too many approval layers",
+      "solution": "Optimize spans of control to reduce layers",
+      "implementation": "Manager spans of 7-12, reduce hierarchy levels"
+    },
+    "decision_rights": {
+      "issue": "Unclear authority boundaries",
+      "solution": "Clear RACI with decision thresholds",
+      "implementation": "Spending authorities by role with escalation rules"
+    },
+    "process_standardization": {
+      "issue": "Inconsistent processes",
+      "solution": "Standard processes with local flexibility",
+      "implementation": "Core standard with configurable variations"
+    },
+    "technology_integration": {
+      "issue": "System fragmentation",
+      "solution": "Integrated technology platform",
+      "implementation": "Single platform with role-based interfaces"
+    },
+    "performance_alignment": {
+      "issue": "Misaligned metrics",
+      "solution": "Balanced scorecard approach",
+      "implementation": "Speed, quality, cost, and satisfaction metrics"
+    }
+  }
+}

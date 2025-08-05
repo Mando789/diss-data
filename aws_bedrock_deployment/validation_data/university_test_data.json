@@ -1,0 +1,285 @@
+{
+  "metadata": {
+    "description": "Real university travel approval process test data for system validation",
+    "version": "1.0",
+    "source": "University administrative processes (anonymized)",
+    "test_purpose": "Validate system performance on real-world academic travel scenarios",
+    "data_characteristics": "Typical university travel patterns, approval hierarchies, and constraints"
+  },
+  "university_context": {
+    "institution_profile": {
+      "type": "Research University",
+      "size": "15,000 students, 2,500 faculty/staff",
+      "annual_travel_budget": "$3.2M",
+      "travel_volume": "~8,000 requests annually",
+      "compliance_requirements": ["Federal regulations", "State travel policies", "University policies", "Grant compliance"]
+    },
+    "approval_structure": {
+      "department_level": "Department chairs for faculty travel",
+      "college_level": "Deans for high-value or international travel", 
+      "university_level": "Provost/VP for executive travel or >$5000",
+      "grant_compliance": "Sponsored research office for grant-funded travel"
+    },
+    "typical_constraints": {
+      "budget_thresholds": ["<$1000: Department approval", "$1000-$3000: Dean approval", ">$3000: VP approval"],
+      "advance_requirements": "30 days for international, 14 days for domestic",
+      "documentation": "Justification, budget, itinerary, compliance forms",
+      "reimbursement_limits": "Per diem rates, lodging limits, transportation policies"
+    }
+  },
+  "test_scenarios": [
+    {
+      "scenario_id": "UNIV_001",
+      "scenario_name": "Faculty Conference Travel - Domestic",
+      "description": "Computer Science professor attending ACM conference in Boston",
+      "travel_details": {
+        "traveler_type": "faculty",
+        "destination": "Boston, MA",
+        "duration": 4,
+        "purpose": "Present research paper at ACM SIGCHI conference",
+        "estimated_cost": 2200,
+        "funding_source": "NSF Grant",
+        "advance_notice": 45
+      },
+      "process_characteristics": {
+        "approval_path": ["Department Chair", "Sponsored Research Office", "Dean"],
+        "compliance_requirements": ["Grant allowability", "University travel policy", "NSF requirements"],
+        "documentation_needed": ["Conference invitation", "Paper acceptance", "Budget breakdown", "Grant authorization"],
+        "typical_processing_time": 8
+      },
+      "expected_inefficiencies": [
+        "Multiple compliance checks for same requirements",
+        "Sequential approval when parallel processing possible",
+        "Redundant documentation across approval levels"
+      ],
+      "optimization_opportunities": [
+        "Integrate grant compliance with travel approval",
+        "Pre-approve conference travel for accepted papers",
+        "Streamline documentation for routine academic travel"
+      ]
+    },
+    {
+      "scenario_id": "UNIV_002", 
+      "scenario_name": "Graduate Student Research Travel",
+      "description": "PhD student needs to travel to collect dissertation data",
+      "travel_details": {
+        "traveler_type": "graduate_student",
+        "destination": "Multiple sites in Colorado",
+        "duration": 10,
+        "purpose": "Dissertation data collection at field sites",
+        "estimated_cost": 1800,
+        "funding_source": "Graduate School Fellowship",
+        "advance_notice": 21
+      },
+      "process_characteristics": {
+        "approval_path": ["Faculty Advisor", "Department Chair", "Graduate School", "Dean"],
+        "compliance_requirements": ["Student travel policy", "Insurance requirements", "Safety protocols"],
+        "documentation_needed": ["Advisor approval", "Research plan", "Safety clearance", "Insurance verification"],
+        "typical_processing_time": 12
+      },
+      "expected_inefficiencies": [
+        "Advisor approval separate from formal process",
+        "Graduate School approval redundant with department",
+        "Safety protocols processed separately from travel approval"
+      ],
+      "optimization_opportunities": [
+        "Integrate advisor approval into system",
+        "Combine graduate school and department approval",
+        "Parallel processing of safety and travel approvals"
+      ]
+    },
+    {
+      "scenario_id": "UNIV_003",
+      "scenario_name": "International Research Collaboration",
+      "description": "Engineering faculty leading student group to partner university in Germany",
+      "travel_details": {
+        "traveler_type": "faculty_and_students",
+        "destination": "Munich, Germany", 
+        "duration": 14,
+        "purpose": "Research collaboration and student exchange",
+        "estimated_cost": 18500,
+        "funding_source": "Multiple sources",
+        "advance_notice": 75
+      },
+      "process_characteristics": {
+        "approval_path": ["Department Chair", "International Programs", "Dean", "Provost", "Risk Management"],
+        "compliance_requirements": ["International travel policy", "Student group travel", "State Department advisories", "Insurance requirements"],
+        "documentation_needed": ["Collaboration agreement", "Student waivers", "Detailed itinerary", "Emergency contacts", "Budget breakdown by source"],
+        "typical_processing_time": 28
+      },
+      "expected_inefficiencies": [
+        "International Programs approval separate from academic approval",
+        "Risk Management review after other approvals",
+        "Multiple funding source validation processes",
+        "Student documentation collected separately"
+      ],
+      "optimization_opportunities": [
+        "Parallel processing of international and academic approvals",
+        "Early risk assessment integration",
+        "Consolidated funding source validation",
+        "Integrated student documentation collection"
+      ]
+    },
+    {
+      "scenario_id": "UNIV_004",
+      "scenario_name": "Emergency Conference Presentation",
+      "description": "Last-minute invitation to present breakthrough research at high-profile conference",
+      "travel_details": {
+        "traveler_type": "faculty",
+        "destination": "Geneva, Switzerland",
+        "duration": 5,
+        "purpose": "Invited keynote at WHO conference",
+        "estimated_cost": 4200,
+        "funding_source": "Department discretionary",
+        "advance_notice": 8
+      },
+      "process_characteristics": {
+        "approval_path": ["Emergency routing to Dean", "Provost", "International Programs"],
+        "compliance_requirements": ["International travel policy", "Emergency approval protocols", "High-value approval"],
+        "documentation_needed": ["Conference invitation", "Justification for emergency", "Abbreviated budget", "Travel insurance"],
+        "typical_processing_time": 15
+      },
+      "expected_inefficiencies": [
+        "No established emergency pathway",
+        "Standard international review despite urgency",
+        "High-value approval delay for time-sensitive opportunity",
+        "Manual routing creating confusion and delays"
+      ],
+      "optimization_opportunities": [
+        "Establish emergency approval pathway",
+        "Risk-based international review for urgent travel",
+        "Expedited high-value approval for strategic opportunities",
+        "Automated emergency routing and notification"
+      ]
+    },
+    {
+      "scenario_id": "UNIV_005",
+      "scenario_name": "Recurring Research Site Visits",
+      "description": "Environmental science faculty conducts monthly monitoring at research station",
+      "travel_details": {
+        "traveler_type": "faculty",
+        "destination": "Mountain Research Station, Colorado",
+        "duration": 3,
+        "purpose": "Monthly environmental monitoring for ongoing study",
+        "estimated_cost": 650,
+        "funding_source": "NSF Grant",
+        "advance_notice": 15,
+        "frequency": "monthly_for_2_years"
+      },
+      "process_characteristics": {
+        "approval_path": ["Department Chair", "Sponsored Research Office"],
+        "compliance_requirements": ["Grant allowability", "University travel policy"],
+        "documentation_needed": ["Grant authorization", "Research protocol", "Budget breakdown"],
+        "typical_processing_time": 5,
+        "annual_overhead": "24 separate approvals for identical trips"
+      },
+      "expected_inefficiencies": [
+        "Full approval process for identical recurring trips",
+        "Repeated grant compliance validation",
+        "Administrative overhead disproportionate to risk",
+        "No recognition of established pattern"
+      ],
+      "optimization_opportunities": [
+        "Annual pre-approval for recurring research travel",
+        "Template-based approval for established patterns",
+        "Automated grant compliance for approved research",
+        "Exception-based review rather than full approval"
+      ]
+    },
+    {
+      "scenario_id": "UNIV_006",
+      "scenario_name": "Multi-Stop Recruitment Travel",
+      "description": "Department chair visiting multiple universities for faculty recruitment",
+      "travel_details": {
+        "traveler_type": "administrator",
+        "destination": "Chicago, Minneapolis, Madison (3-city tour)",
+        "duration": 6,
+        "purpose": "Faculty recruitment interviews at partner universities",
+        "estimated_cost": 2800,
+        "funding_source": "Faculty search budget",
+        "advance_notice": 30
+      },
+      "process_characteristics": {
+        "approval_path": ["Dean", "HR (for recruitment)", "Provost"],
+        "compliance_requirements": ["Recruitment policies", "Travel policy", "Budget authorization"],
+        "documentation_needed": ["Search committee approval", "Interview schedule", "Budget by location", "Recruitment justification"],
+        "typical_processing_time": 10
+      },
+      "expected_inefficiencies": [
+        "HR recruitment approval separate from travel approval",
+        "Budget breakdown by city when total is what matters",
+        "Search committee approval outside travel system",
+        "Recruitment policy validation independent of travel policy"
+      ],
+      "optimization_opportunities": [
+        "Integrate recruitment and travel approval workflows",
+        "Simplified budget validation for multi-stop trips",
+        "Connect search committee approvals to travel system",
+        "Combined policy compliance checking"
+      ]
+    }
+  ],
+  "common_pain_points": {
+    "faculty_frustrations": [
+      "Multiple systems for different approval types",
+      "Repeated entry of same information",
+      "Unclear status and approval timeline",
+      "Last-minute approval delays causing booking premium",
+      "Inconsistent policy interpretation across departments"
+    ],
+    "administrator_challenges": [
+      "Manual routing and approval tracking",
+      "Difficulty prioritizing urgent vs routine requests",
+      "Compliance verification across multiple policies",
+      "Budget tracking across different funding sources",
+      "Audit trail creation and maintenance"
+    ],
+    "system_limitations": [
+      "Poor integration between travel, HR, and finance systems",
+      "Limited workflow automation capabilities",
+      "Inadequate mobile access for approvals",
+      "Weak reporting and analytics functionality",
+      "Manual processes for exception handling"
+    ]
+  },
+  "optimization_expectations": {
+    "efficiency_targets": {
+      "domestic_faculty_travel": "3-5 day approval for routine conference travel",
+      "international_travel": "10-14 day approval with parallel compliance processing",
+      "emergency_approvals": "24-48 hour approval for urgent travel",
+      "recurring_travel": "Annual pre-approval with variance monitoring"
+    },
+    "satisfaction_goals": {
+      "faculty_satisfaction": ">85% with approval process speed and clarity",
+      "administrator_efficiency": "50% reduction in manual approval overhead",
+      "compliance_accuracy": "100% compliance with all applicable policies",
+      "audit_readiness": "Real-time audit trail and reporting capability"
+    },
+    "system_improvements": {
+      "integration_level": "Single system for all travel-related approvals",
+      "automation_rate": ">70% of routine approvals automated",
+      "mobile_capability": "Full approval workflow accessible via mobile",
+      "analytics_capability": "Real-time dashboard and predictive analytics"
+    }
+  },
+  "validation_criteria": {
+    "accuracy_requirements": {
+      "inefficiency_detection": "Must identify actual university pain points",
+      "framework_application": "Framework violations must align with real issues",
+      "optimization_potential": "Estimates must be realistic for academic environment",
+      "solution_appropriateness": "Recommendations must fit university constraints"
+    },
+    "feasibility_standards": {
+      "implementation_timeline": "Must account for academic calendar and change pace",
+      "budget_realism": "Cost estimates appropriate for university budget constraints",
+      "change_management": "Must consider faculty and staff change resistance",
+      "compliance_maintenance": "All solutions must maintain regulatory compliance"
+    },
+    "success_metrics": {
+      "efficiency_gains": "Measurable reduction in approval time and administrative overhead",
+      "satisfaction_improvement": "Quantified improvement in stakeholder satisfaction",
+      "compliance_assurance": "Maintained or improved compliance across all policies",
+      "roi_achievement": "Positive return on investment within 18-24 months"
+    }
+  }
+}

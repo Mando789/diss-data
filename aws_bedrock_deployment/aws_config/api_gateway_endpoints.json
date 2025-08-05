@@ -1,0 +1,537 @@
+{
+  "metadata": {
+    "description": "API Gateway configuration for workflow optimization system",
+    "version": "1.0",
+    "api_type": "REST API",
+    "purpose": "External interface for workflow optimization requests and system management"
+  },
+  "api_configuration": {
+    "api_name": "workflow-optimization-api",
+    "description": "Multi-agent workflow optimization system API",
+    "endpoint_type": "REGIONAL",
+    "protocol": "HTTPS",
+    "minimum_compression_size": 1024,
+    "binary_media_types": ["image/*", "application/pdf", "application/octet-stream"],
+    "cors": {
+      "allow_origins": ["https://university-portal.edu", "https://admin-dashboard.workflow-opt.com"],
+      "allow_methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      "allow_headers": ["Content-Type", "X-Amz-Date", "Authorization", "X-Api-Key", "X-Amz-Security-Token"],
+      "max_age": 3600
+    },
+    "throttling": {
+      "rate_limit": 1000,
+      "burst_limit": 2000
+    }
+  },
+  "endpoints": [
+    {
+      "path": "/optimize",
+      "method": "POST",
+      "description": "Submit workflow for optimization analysis",
+      "integration": {
+        "type": "AWS_PROXY",
+        "integration_method": "POST",
+        "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:ACCOUNT:function:orchestration-agent/invocations"
+      },
+      "request_parameters": {
+        "required": [],
+        "optional": ["format", "priority", "stakeholder_group"]
+      },
+      "request_body": {
+        "content_type": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["workflow_data", "analysis_type"],
+          "properties": {
+            "workflow_data": {
+              "type": "object",
+              "description": "Workflow information to be analyzed"
+            },
+            "analysis_type": {
+              "type": "string",
+              "enum": ["comprehensive", "quick_assessment", "targeted_analysis"],
+              "description": "Type of analysis to perform"
+            },
+            "output_format": {
+              "type": "string",
+              "enum": ["executive_summary", "detailed_analysis", "implementation_guide", "business_case"],
+              "default": "executive_summary",
+              "description": "Desired output format"
+            },
+            "organization_context": {
+              "type": "object",
+              "description": "Organizational context for optimization"
+            },
+            "priority": {
+              "type": "string",
+              "enum": ["low", "medium", "high", "urgent"],
+              "default": "medium",
+              "description": "Processing priority"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Optimization request accepted",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "session_id": {"type": "string"},
+              "status": {"type": "string"},
+              "estimated_completion": {"type": "string"},
+              "tracking_url": {"type": "string"}
+            }
+          }
+        },
+        "400": {
+          "description": "Invalid request format",
+          "schema": {"$ref": "#/definitions/Error"}
+        },
+        "429": {
+          "description": "Rate limit exceeded",
+          "schema": {"$ref": "#/definitions/Error"}
+        },
+        "500": {
+          "description": "Internal server error",
+          "schema": {"$ref": "#/definitions/Error"}
+        }
+      },
+      "authorization": {
+        "type": "API_KEY",
+        "required": true
+      }
+    },
+    {
+      "path": "/status/{session_id}",
+      "method": "GET",
+      "description": "Check status of optimization request",
+      "integration": {
+        "type": "AWS_PROXY",
+        "integration_method": "POST",
+        "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:ACCOUNT:function:orchestration-agent/invocations"
+      },
+      "path_parameters": {
+        "session_id": {
+          "type": "string",
+          "required": true,
+          "description": "Optimization session identifier"
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Session status retrieved",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "session_id": {"type": "string"},
+              "status": {
+                "type": "string",
+                "enum": ["queued", "processing", "completed", "failed", "cancelled"]
+              },
+              "current_stage": {"type": "string"},
+              "progress_percentage": {"type": "number"},
+              "estimated_completion": {"type": "string"},
+              "quality_metrics": {"type": "object"},
+              "error_message": {"type": "string"}
+            }
+          }
+        },
+        "404": {
+          "description": "Session not found",
+          "schema": {"$ref": "#/definitions/Error"}
+        }
+      },
+      "authorization": {
+        "type": "API_KEY",
+        "required": true
+      }
+    },
+    {
+      "path": "/results/{session_id}",
+      "method": "GET",
+      "description": "Retrieve optimization results",
+      "integration": {
+        "type": "AWS_PROXY",
+        "integration_method": "POST",
+        "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:ACCOUNT:function:orchestration-agent/invocations"
+      },
+      "path_parameters": {
+        "session_id": {
+          "type": "string",
+          "required": true,
+          "description": "Optimization session identifier"
+        }
+      },
+      "query_parameters": {
+        "format": {
+          "type": "string",
+          "enum": ["json", "pdf", "html"],
+          "default": "json",
+          "description": "Response format"
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Optimization results",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "session_id": {"type": "string"},
+              "workflow_id": {"type": "string"},
+              "optimization_summary": {"type": "object"},
+              "inefficiency_score": {"type": "number"},
+              "optimization_potential": {"type": "number"},
+              "framework_violations": {"type": "array"},
+              "recommendations": {"type": "array"},
+              "implementation_roadmap": {"type": "object"},
+              "expected_roi": {"type": "object"},
+              "quality_metrics": {"type": "object"}
+            }
+          }
+        },
+        "404": {
+          "description": "Results not found or not ready",
+          "schema": {"$ref": "#/definitions/Error"}
+        }
+      },
+      "authorization": {
+        "type": "API_KEY",
+        "required": true
+      }
+    },
+    {
+      "path": "/workflows",
+      "method": "GET",
+      "description": "List processed workflows with filtering",
+      "integration": {
+        "type": "AWS_PROXY",
+        "integration_method": "POST", 
+        "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:ACCOUNT:function:orchestration-agent/invocations"
+      },
+      "query_parameters": {
+        "limit": {
+          "type": "integer",
+          "default": 50,
+          "maximum": 100,
+          "description": "Maximum number of results"
+        },
+        "offset": {
+          "type": "integer",
+          "default": 0,
+          "description": "Result offset for pagination"
+        },
+        "min_inefficiency_score": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Minimum inefficiency score filter"
+        },
+        "min_optimization_potential": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Minimum optimization potential percentage"
+        },
+        "date_from": {
+          "type": "string",
+          "format": "date",
+          "description": "Filter workflows from this date"
+        },
+        "date_to": {
+          "type": "string",
+          "format": "date",
+          "description": "Filter workflows to this date"
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "List of workflows",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "workflows": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "workflow_id": {"type": "string"},
+                    "optimization_timestamp": {"type": "string"},
+                    "inefficiency_score": {"type": "number"},
+                    "optimization_potential": {"type": "number"},
+                    "status": {"type": "string"}
+                  }
+                }
+              },
+              "total_count": {"type": "integer"},
+              "has_more": {"type": "boolean"}
+            }
+          }
+        }
+      },
+      "authorization": {
+        "type": "API_KEY",
+        "required": true
+      }
+    },
+    {
+      "path": "/validate",
+      "method": "POST", 
+      "description": "Validate workflow data before optimization",
+      "integration": {
+        "type": "AWS_PROXY",
+        "integration_method": "POST",
+        "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:ACCOUNT:function:input-processing-agent/invocations"
+      },
+      "request_body": {
+        "content_type": "application/json",
+        "schema": {
+          "type": "object",
+          "required": ["workflow_data"],
+          "properties": {
+            "workflow_data": {
+              "type": "object",
+              "description": "Workflow data to validate"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Validation results",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "valid": {"type": "boolean"},
+              "completeness": {"type": "number"},
+              "quality_score": {"type": "number"},
+              "missing_fields": {"type": "array"},
+              "recommendations": {"type": "array"}
+            }
+          }
+        }
+      },
+      "authorization": {
+        "type": "API_KEY",
+        "required": true
+      }
+    },
+    {
+      "path": "/health",
+      "method": "GET",
+      "description": "System health check",
+      "integration": {
+        "type": "MOCK",
+        "request_templates": {
+          "application/json": "{\"statusCode\": 200}"
+        },
+        "integration_responses": [
+          {
+            "status_code": "200",
+            "response_templates": {
+              "application/json": "{\"status\": \"healthy\", \"timestamp\": \"$context.requestTime\"}"
+            }
+          }
+        ]
+      },
+      "responses": {
+        "200": {
+          "description": "System is healthy",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "status": {"type": "string"},
+              "timestamp": {"type": "string"}
+            }
+          }
+        }
+      },
+      "authorization": {
+        "type": "NONE"
+      }
+    },
+    {
+      "path": "/metrics/system",
+      "method": "GET",
+      "description": "System performance metrics",
+      "integration": {
+        "type": "AWS_PROXY",
+        "integration_method": "POST",
+        "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:ACCOUNT:function:orchestration-agent/invocations"
+      },
+      "query_parameters": {
+        "time_range": {
+          "type": "string",
+          "enum": ["1h", "24h", "7d", "30d"],
+          "default": "24h",
+          "description": "Time range for metrics"
+        },
+        "agent": {
+          "type": "string",
+          "enum": ["input", "analysis", "optimization", "output", "orchestration"],
+          "description": "Specific agent metrics"
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "System metrics",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "time_range": {"type": "string"},
+              "agent_performance": {"type": "object"},
+              "quality_metrics": {"type": "object"},
+              "processing_statistics": {"type": "object"},
+              "error_rates": {"type": "object"}
+            }
+          }
+        }
+      },
+      "authorization": {
+        "type": "API_KEY",
+        "required": true,
+        "scopes": ["admin"]
+      }
+    }
+  ],
+  "models": {
+    "Error": {
+      "type": "object",
+      "required": ["error_code", "message"],
+      "properties": {
+        "error_code": {
+          "type": "string",
+          "description": "Machine-readable error code"
+        },
+        "message": {
+          "type": "string",
+          "description": "Human-readable error message"
+        },
+        "details": {
+          "type": "object",
+          "description": "Additional error details"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Error timestamp"
+        }
+      }
+    },
+    "WorkflowData": {
+      "type": "object",
+      "description": "Workflow information for optimization",
+      "properties": {
+        "workflow_description": {"type": "string"},
+        "process_steps": {"type": "array"},
+        "stakeholders": {"type": "array"},
+        "performance_metrics": {"type": "object"},
+        "pain_points": {"type": "array"}
+      }
+    }
+  },
+  "security": {
+    "api_keys": {
+      "usage_plans": [
+        {
+          "name": "basic-tier",
+          "description": "Basic usage for university departments",
+          "throttle": {"rate_limit": 100, "burst_limit": 200},
+          "quota": {"limit": 1000, "period": "MONTH"},
+          "api_stages": [{"api_id": "workflow-optimization-api", "stage": "prod"}]
+        },
+        {
+          "name": "premium-tier",
+          "description": "Premium usage for enterprise clients",
+          "throttle": {"rate_limit": 500, "burst_limit": 1000},
+          "quota": {"limit": 10000, "period": "MONTH"},
+          "api_stages": [{"api_id": "workflow-optimization-api", "stage": "prod"}]
+        },
+        {
+          "name": "admin-tier",
+          "description": "Administrative access",
+          "throttle": {"rate_limit": 1000, "burst_limit": 2000},
+          "quota": {"limit": 50000, "period": "MONTH"},
+          "api_stages": [{"api_id": "workflow-optimization-api", "stage": "prod"}]
+        }
+      ]
+    },
+    "resource_policy": {
+      "allow_ip_ranges": ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"],
+      "deny_all_other": true
+    },
+    "request_validation": {
+      "validate_request_body": true,
+      "validate_request_parameters": true,
+      "validate_response": false
+    }
+  },
+  "stages": [
+    {
+      "stage_name": "dev",
+      "description": "Development environment",
+      "deployment_description": "Development deployment for testing",
+      "variables": {
+        "lambda_alias": "DEV",
+        "log_level": "DEBUG"
+      },
+      "method_settings": {
+        "logging_level": "INFO",
+        "data_trace_enabled": true,
+        "metrics_enabled": true,
+        "throttling_rate_limit": 100,
+        "throttling_burst_limit": 200
+      }
+    },
+    {
+      "stage_name": "staging",
+      "description": "Staging environment",
+      "deployment_description": "Staging deployment for pre-production testing",
+      "variables": {
+        "lambda_alias": "STAGING",
+        "log_level": "INFO"
+      },
+      "method_settings": {
+        "logging_level": "WARN",
+        "data_trace_enabled": false,
+        "metrics_enabled": true,
+        "throttling_rate_limit": 500,
+        "throttling_burst_limit": 1000
+      }
+    },
+    {
+      "stage_name": "prod",
+      "description": "Production environment",
+      "deployment_description": "Production deployment",
+      "variables": {
+        "lambda_alias": "PROD",
+        "log_level": "WARN"
+      },
+      "method_settings": {
+        "logging_level": "ERROR",
+        "data_trace_enabled": false,
+        "metrics_enabled": true,
+        "throttling_rate_limit": 1000,
+        "throttling_burst_limit": 2000
+      }
+    }
+  ],
+  "monitoring": {
+    "cloudwatch_logs": {
+      "access_logging": true,
+      "execution_logging": true,
+      "retention_days": 30
+    },
+    "x_ray_tracing": {
+      "enabled": true,
+      "sampling_rate": 0.1
+    },
+    "custom_metrics": [
+      "RequestCount",
+      "4XXError",
+      "5XXError",
+      "Latency",
+      "IntegrationLatency"
+    ]
+  }
+}

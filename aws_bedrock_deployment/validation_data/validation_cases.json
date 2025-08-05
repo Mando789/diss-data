@@ -1,0 +1,337 @@
+{
+  "metadata": {
+    "description": "Validation test cases for multi-agent workflow optimization system",
+    "version": "1.0",
+    "source": "University travel approval process examples",
+    "validation_purpose": "Test agent accuracy against known inefficiencies and expected outputs",
+    "framework_basis": "Agile + Lean + Operating Model principles"
+  },
+  "test_cases": [
+    {
+      "case_id": "VAL_001",
+      "test_name": "High Rejection Rate Process",
+      "input_data": {
+        "workflow_description": "University travel approval process with 8 sequential steps, 28% rejection rate, average 18 days processing time, requires 4 levels of approval for all international travel",
+        "process_characteristics": {
+          "approval_levels": 4,
+          "rejection_rate": 0.28,
+          "average_cycle_time": 18,
+          "process_type": "international_travel_approval"
+        }
+      },
+      "expected_outputs": {
+        "input_agent": {
+          "extracted_characteristics": ["high_rejection_rate", "excessive_approval_levels", "extended_cycle_time"],
+          "potential_bottlenecks": ["multiple_approval_layers", "poor_initial_validation", "sequential_processing"]
+        },
+        "analysis_agent": {
+          "framework_violations": [
+            {
+              "type": "high_defect_rate",
+              "framework": "lean",
+              "severity": "high",
+              "evidence": "28% rejection rate exceeds 12% domestic benchmark significantly"
+            },
+            {
+              "type": "excessive_approval_layers",
+              "framework": "agile",
+              "severity": "high",
+              "evidence": "4 approval levels violates simplicity principle"
+            }
+          ],
+          "inefficiency_score": 8.5,
+          "optimization_potential": "65%"
+        },
+        "optimization_agent": {
+          "primary_recommendation": "Implement Smart Pre-Validation System",
+          "expected_roi": "60% reduction in rejections, 50% faster processing",
+          "implementation_timeline": "6-8 weeks"
+        },
+        "output_agent": {
+          "format": "executive_summary",
+          "key_finding": "Critical quality issues requiring immediate upstream intervention"
+        }
+      },
+      "validation_criteria": {
+        "accuracy_thresholds": {
+          "rejection_rate_identification": "Must identify >25% as high",
+          "framework_violation_detection": "Must identify both Lean defects and Agile simplicity violations",
+          "optimization_potential": "Should estimate 50-70% improvement potential"
+        },
+        "quality_requirements": {
+          "framework_alignment": "All recommendations must trace to specific framework principles",
+          "implementation_feasibility": "Recommendations must be implementable within 90 days",
+          "roi_justification": "ROI calculations must be conservative and evidence-based"
+        }
+      }
+    },
+    {
+      "case_id": "VAL_002",
+      "test_name": "Emergency Travel Process Gap",
+      "input_data": {
+        "workflow_description": "Faculty member needs urgent travel approval for conference presentation. Standard process takes 5-7 days minimum. Conference is in 48 hours. No expedited pathway exists.",
+        "process_characteristics": {
+          "urgency_level": "critical",
+          "required_timeline": 48,
+          "standard_process_time": 168,
+          "expedited_option": false
+        }
+      },
+      "expected_outputs": {
+        "input_agent": {
+          "extracted_characteristics": ["emergency_requirement", "process_inflexibility", "timeline_conflict"],
+          "potential_bottlenecks": ["no_emergency_pathway", "rigid_workflow", "approval_queue"]
+        },
+        "analysis_agent": {
+          "framework_violations": [
+            {
+              "type": "inflexible_process",
+              "framework": "agile",
+              "severity": "critical",
+              "evidence": "Cannot respond to change - violates core Agile value"
+            },
+            {
+              "type": "waiting_waste",
+              "framework": "lean",
+              "severity": "high",
+              "evidence": "Unnecessary waiting time for urgent business needs"
+            }
+          ],
+          "inefficiency_score": 9.2,
+          "optimization_potential": "85%"
+        },
+        "optimization_agent": {
+          "primary_recommendation": "Create Emergency Fast-Track Process",
+          "expected_roi": "95% faster emergency approvals, 40% cost savings",
+          "implementation_timeline": "4-6 weeks"
+        },
+        "output_agent": {
+          "format": "business_case",
+          "key_finding": "Critical business capability gap requiring immediate process redesign"
+        }
+      },
+      "validation_criteria": {
+        "accuracy_thresholds": {
+          "urgency_recognition": "Must classify as critical/emergency",
+          "agile_violation_detection": "Must identify 'responding to change' violation",
+          "optimization_potential": "Should estimate >80% improvement potential"
+        },
+        "quality_requirements": {
+          "solution_appropriateness": "Must recommend emergency pathway creation",
+          "timeline_realism": "Implementation timeline must be achievable",
+          "business_impact_assessment": "Must quantify opportunity cost of current state"
+        }
+      }
+    },
+    {
+      "case_id": "VAL_003",
+      "test_name": "System Fragmentation Analysis",
+      "input_data": {
+        "workflow_description": "Travel approval process requires users to switch between 4 different systems: HR portal for request submission, budget system for financial validation, compliance system for policy checking, and booking system for arrangements. Average 35 clicks and 12 screen changes per approval.",
+        "process_characteristics": {
+          "system_count": 4,
+          "user_clicks": 35,
+          "screen_changes": 12,
+          "integration_level": "minimal"
+        }
+      },
+      "expected_outputs": {
+        "input_agent": {
+          "extracted_characteristics": ["system_fragmentation", "poor_user_experience", "integration_gaps"],
+          "potential_bottlenecks": ["system_switching_overhead", "data_re_entry", "interface_complexity"]
+        },
+        "analysis_agent": {
+          "framework_violations": [
+            {
+              "type": "motion_waste",
+              "framework": "lean",
+              "severity": "high",
+              "evidence": "35 clicks and 12 screen changes exceed efficiency thresholds"
+            },
+            {
+              "type": "poor_technical_excellence",
+              "framework": "agile",
+              "severity": "medium",
+              "evidence": "Fragmented systems impede effective collaboration"
+            }
+          ],
+          "inefficiency_score": 6.8,
+          "optimization_potential": "55%"
+        },
+        "optimization_agent": {
+          "primary_recommendation": "Implement Unified Travel Management Platform",
+          "expected_roi": "60% efficiency improvement, 40% error reduction",
+          "implementation_timeline": "10-12 weeks"
+        },
+        "output_agent": {
+          "format": "implementation_guide",
+          "key_finding": "Technology consolidation opportunity with significant efficiency gains"
+        }
+      },
+      "validation_criteria": {
+        "accuracy_thresholds": {
+          "motion_waste_detection": "Must identify excessive clicks/screen changes as Lean waste",
+          "technical_excellence_assessment": "Should identify system fragmentation impact",
+          "efficiency_calculation": "Should estimate 50-70% improvement potential"
+        },
+        "quality_requirements": {
+          "solution_scope": "Must recommend platform consolidation",
+          "implementation_realism": "Timeline must account for system integration complexity",
+          "roi_calculation": "Must include both efficiency gains and error reduction"
+        }
+      }
+    },
+    {
+      "case_id": "VAL_004",
+      "test_name": "Recurring Travel Inefficiency",
+      "input_data": {
+        "workflow_description": "Research department head travels to Washington DC monthly for NIH meetings. Same route, same hotel, same cost structure ($1,200 per trip). Requires full approval process each month including budget validation, compliance check, and director approval. 12 trips this year with identical parameters.",
+        "process_characteristics": {
+          "travel_frequency": "monthly",
+          "pattern_consistency": "identical",
+          "annual_trips": 12,
+          "cost_per_trip": 1200,
+          "approval_overhead": "full_process_each_time"
+        }
+      },
+      "expected_outputs": {
+        "input_agent": {
+          "extracted_characteristics": ["recurring_pattern", "predictable_travel", "administrative_overhead"],
+          "potential_bottlenecks": ["repetitive_approvals", "unnecessary_validation", "pattern_ignorance"]
+        },
+        "analysis_agent": {
+          "framework_violations": [
+            {
+              "type": "overproduction_waste",
+              "framework": "lean",
+              "severity": "high",
+              "evidence": "Full approval for identical requests violates efficiency principles"
+            },
+            {
+              "type": "work_not_maximized",
+              "framework": "agile",
+              "severity": "medium",
+              "evidence": "Repetitive work violates simplicity principle"
+            }
+          ],
+          "inefficiency_score": 7.2,
+          "optimization_potential": "75%"
+        },
+        "optimization_agent": {
+          "primary_recommendation": "Implement Pre-Approved Travel Templates",
+          "expected_roi": "80% administrative overhead reduction",
+          "implementation_timeline": "3-4 weeks"
+        },
+        "output_agent": {
+          "format": "process_design",
+          "key_finding": "Template-based approval opportunity for predictable travel patterns"
+        }
+      },
+      "validation_criteria": {
+        "accuracy_thresholds": {
+          "pattern_recognition": "Must identify recurring/predictable nature",
+          "waste_classification": "Should classify as overproduction or overprocessing waste",
+          "optimization_potential": "Should estimate 70-85% overhead reduction"
+        },
+        "quality_requirements": {
+          "solution_specificity": "Must recommend template or pre-approval approach",
+          "risk_consideration": "Should address budget control and variance detection",
+          "implementation_simplicity": "Timeline should reflect relative simplicity of solution"
+        }
+      }
+    },
+    {
+      "case_id": "VAL_005",
+      "test_name": "Approval Bottleneck Scenario",
+      "input_data": {
+        "workflow_description": "Single department director approves all travel requests >$1,500. Director receives 45+ requests weekly, creating 6-day average approval delay. Director reports being overwhelmed and unable to provide thoughtful review. 25% of requests escalate to VP due to director unavailability.",
+        "process_characteristics": {
+          "bottleneck_role": "department_director",
+          "approval_threshold": 1500,
+          "weekly_volume": 45,
+          "average_delay": 6,
+          "escalation_rate": 0.25
+        }
+      },
+      "expected_outputs": {
+        "input_agent": {
+          "extracted_characteristics": ["single_point_bottleneck", "capacity_overload", "escalation_issues"],
+          "potential_bottlenecks": ["director_capacity_constraint", "approval_queue", "workload_imbalance"]
+        },
+        "analysis_agent": {
+          "framework_violations": [
+            {
+              "type": "waiting_waste",
+              "framework": "lean",
+              "severity": "critical",
+              "evidence": "6-day delay with 25% escalation indicates severe bottleneck"
+            },
+            {
+              "type": "unsustainable_pace",
+              "framework": "agile",
+              "severity": "high",
+              "evidence": "Overwhelmed approver violates sustainable development principle"
+            }
+          ],
+          "inefficiency_score": 9.1,
+          "optimization_potential": "80%"
+        },
+        "optimization_agent": {
+          "primary_recommendation": "Implement Tiered Approval Authority with Delegation",
+          "expected_roi": "75% bottleneck reduction, 60% faster processing",
+          "implementation_timeline": "4-5 weeks"
+        },
+        "output_agent": {
+          "format": "organizational_design",
+          "key_finding": "Critical structural bottleneck requiring authority redistribution"
+        }
+      },
+      "validation_criteria": {
+        "accuracy_thresholds": {
+          "bottleneck_identification": "Must identify single point of failure",
+          "severity_assessment": "Should classify as critical/high severity",
+          "capacity_analysis": "Must recognize capacity vs. demand imbalance"
+        },
+        "quality_requirements": {
+          "structural_solution": "Must recommend delegation or authority redistribution",
+          "workload_sustainability": "Should address sustainable workload principles",
+          "implementation_support": "Must include change management for authority transfer"
+        }
+      }
+    }
+  ],
+  "validation_methodology": {
+    "accuracy_scoring": {
+      "detection_accuracy": "Percentage of correctly identified inefficiencies",
+      "classification_accuracy": "Correct framework violation classification",
+      "severity_accuracy": "Appropriate severity level assignment",
+      "potential_estimation": "Accuracy of optimization potential estimates"
+    },
+    "quality_assessment": {
+      "framework_alignment": "Traceability to specific framework principles",
+      "implementation_feasibility": "Realistic and achievable recommendations",
+      "roi_justification": "Evidence-based benefit calculations",
+      "completeness": "Comprehensive coverage of identified issues"
+    },
+    "performance_metrics": {
+      "response_time": "Time to generate complete analysis and recommendations",
+      "consistency": "Consistent results across similar cases",
+      "improvement_tracking": "Learning and improvement over multiple runs",
+      "user_satisfaction": "Stakeholder feedback on recommendation quality"
+    }
+  },
+  "success_criteria": {
+    "minimum_accuracy": {
+      "inefficiency_detection": ">85%",
+      "framework_classification": ">80%",
+      "severity_assessment": ">75%",
+      "optimization_potential": "Within 15% of expected range"
+    },
+    "quality_standards": {
+      "framework_traceability": "100% of recommendations must trace to framework principles",
+      "implementation_feasibility": ">90% of recommendations must be implementable within stated timelines",
+      "roi_conservative": "ROI estimates must be conservative and evidence-based",
+      "academic_rigor": "All analysis must meet dissertation research standards"
+    }
+  }
+}

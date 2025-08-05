@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "framework": "Agile Manifesto",
+    "source": "https://agilealliance.org/agile101/the-agile-manifesto/",
+    "version": "1.0",
+    "description": "Complete Agile methodology for workflow optimization",
+    "application": "AI agent training for organizational process improvement"
+  },
+  "core_values": [
+    {
+      "value": "Individuals and interactions over processes and tools",
+      "workflow_application": "Prioritize human communication and collaboration in approval processes",
+      "operating_model_impact": "Design approval hierarchies that enable direct communication between stakeholders",
+      "inefficiency_detection": "Look for processes that rely too heavily on systems instead of human judgment",
+      "optimization_guidance": "Enable direct approver-traveler communication channels"
+    },
+    {
+      "value": "Working software over comprehensive documentation",
+      "workflow_application": "Focus on functional workflows rather than excessive documentation",
+      "operating_model_impact": "Minimize bureaucratic overhead and focus on value-delivering activities",
+      "inefficiency_detection": "Identify processes with excessive documentation requirements that don't add value",
+      "optimization_guidance": "Streamline documentation to essential business value only"
+    },
+    {
+      "value": "Customer collaboration over contract negotiation",
+      "workflow_application": "Enable direct stakeholder collaboration in travel approval processes",
+      "operating_model_impact": "Create structures that facilitate collaboration between internal customers and service providers",
+      "inefficiency_detection": "Spot processes that create adversarial relationships between departments",
+      "optimization_guidance": "Foster collaborative approval processes with shared accountability"
+    },
+    {
+      "value": "Responding to change over following a plan",
+      "workflow_application": "Create adaptive workflows that can handle exceptions and changes",
+      "operating_model_impact": "Build flexible organizational structures that can adapt to changing business needs",
+      "inefficiency_detection": "Find rigid processes that break down when requirements change",
+      "optimization_guidance": "Build flexibility and exception handling into standard processes"
+    }
+  ],
+  "twelve_principles": [
+    {
+      "principle": "Our highest priority is to satisfy the customer through early and continuous delivery of valuable software",
+      "workflow_application": "Deliver approvals quickly and continuously rather than in batches",
+      "operating_model_application": "Design approval processes that provide immediate value to employees",
+      "measurement": "Time from request to approval, stakeholder satisfaction scores",
+      "violation_indicators": ["Batch processing", "Long approval cycles", "Low stakeholder satisfaction"],
+      "optimization_strategies": ["Continuous flow processing", "Real-time approvals", "Customer-centric metrics"]
+    },
+    {
+      "principle": "Welcome changing requirements, even late in development",
+      "workflow_application": "Allow travel request modifications without starting over",
+      "operating_model_application": "Create change management processes that are efficient and user-friendly",
+      "measurement": "Percentage of requests that can be modified without restarting the process",
+      "violation_indicators": ["Process restarts for changes", "Inflexible workflows", "Change resistance"],
+      "optimization_strategies": ["Flexible modification workflows", "Change-friendly processes", "Adaptive approval paths"]
+    },
+    {
+      "principle": "Deliver working software frequently, from a couple of weeks to a couple of months",
+      "workflow_application": "Process approvals in hours/days, not weeks/months",
+      "operating_model_application": "Establish service level agreements that prioritize speed",
+      "measurement": "Average approval cycle time, percentage of approvals within SLA",
+      "violation_indicators": ["Multi-week approval cycles", "Batch processing", "Poor SLA performance"],
+      "optimization_strategies": ["Rapid approval cycles", "Continuous processing", "Speed-focused SLAs"]
+    },
+    {
+      "principle": "Business people and developers must work together daily",
+      "workflow_application": "Travelers and approvers should have direct communication channels",
+      "operating_model_application": "Remove barriers between business units and support functions",
+      "measurement": "Frequency of direct stakeholder communication, resolution time for issues",
+      "violation_indicators": ["Isolated approval processes", "Poor communication", "Delayed issue resolution"],
+      "optimization_strategies": ["Direct communication channels", "Collaborative tools", "Regular stakeholder interaction"]
+    },
+    {
+      "principle": "Build projects around motivated individuals",
+      "workflow_application": "Empower employees to make appropriate travel decisions within guidelines",
+      "operating_model_application": "Design roles and responsibilities that leverage individual expertise",
+      "measurement": "Employee empowerment scores, decision-making authority levels",
+      "violation_indicators": ["Micromanagement", "Limited delegation", "Low employee autonomy"],
+      "optimization_strategies": ["Empowerment frameworks", "Delegation matrices", "Trust-based approval"]
+    },
+    {
+      "principle": "The most efficient and effective method of conveying information is face-to-face conversation",
+      "workflow_application": "Use real-time communication tools for approval discussions rather than email chains",
+      "operating_model_application": "Design communication protocols that prioritize direct interaction",
+      "measurement": "Communication effectiveness scores, time to resolution for complex issues",
+      "violation_indicators": ["Email-heavy processes", "Poor communication tools", "Slow issue resolution"],
+      "optimization_strategies": ["Real-time communication", "Direct interaction tools", "Synchronous approval discussions"]
+    },
+    {
+      "principle": "Working software is the primary measure of progress",
+      "workflow_application": "Measure success by completed approvals, not documentation or meetings",
+      "operating_model_application": "Focus metrics on business outcomes rather than activity measures",
+      "measurement": "Business outcome metrics vs. activity metrics ratio",
+      "violation_indicators": ["Activity-focused metrics", "Documentation emphasis", "Process-over-outcome focus"],
+      "optimization_strategies": ["Outcome-based metrics", "Results measurement", "Value-focused tracking"]
+    },
+    {
+      "principle": "Agile processes promote sustainable development",
+      "workflow_application": "Create workflows that don't overburden approvers or create burnout",
+      "operating_model_application": "Design workload distribution that maintains quality and employee wellbeing",
+      "measurement": "Employee satisfaction, workload balance, quality metrics",
+      "violation_indicators": ["Approver overload", "Burnout indicators", "Quality degradation"],
+      "optimization_strategies": ["Workload balancing", "Sustainable processes", "Quality maintenance"]
+    },
+    {
+      "principle": "Continuous attention to technical excellence and good design enhances agility",
+      "workflow_application": "Continuously improve workflow design and automation capabilities",
+      "operating_model_application": "Invest in capabilities and systems that enhance organizational agility",
+      "measurement": "Process improvement frequency, system capability maturity",
+      "violation_indicators": ["Technical debt", "Poor system design", "Lack of improvement"],
+      "optimization_strategies": ["Technical excellence", "Good design practices", "Continuous capability development"]
+    },
+    {
+      "principle": "Simplicity--the art of maximizing the amount of work not done--is essential",
+      "workflow_application": "Eliminate unnecessary approval steps and redundant activities",
+      "operating_model_application": "Design lean organizational structures that minimize waste",
+      "measurement": "Process step count, value-added activity percentage",
+      "violation_indicators": ["Excessive process steps", "Redundant activities", "Low value-add ratio"],
+      "optimization_strategies": ["Process simplification", "Waste elimination", "Value stream focus"]
+    },
+    {
+      "principle": "The best architectures, requirements, and designs emerge from self-organizing teams",
+      "workflow_application": "Allow teams to optimize their own travel approval processes within guidelines",
+      "operating_model_application": "Enable autonomous teams with clear boundaries and objectives",
+      "measurement": "Team autonomy scores, self-optimization frequency",
+      "violation_indicators": ["Top-down process design", "Limited team autonomy", "Rigid structures"],
+      "optimization_strategies": ["Self-organizing teams", "Autonomous optimization", "Emergent design"]
+    },
+    {
+      "principle": "At regular intervals, the team reflects on how to become more effective",
+      "workflow_application": "Regular retrospectives on travel approval process effectiveness",
+      "operating_model_application": "Build continuous improvement into organizational routines",
+      "measurement": "Retrospective frequency, improvement implementation rate",
+      "violation_indicators": ["No retrospectives", "Poor improvement rate", "Lack of reflection"],
+      "optimization_strategies": ["Regular retrospectives", "Continuous improvement", "Reflective practices"]
+    }
+  ],
+  "agile_detection_rules": [
+    {
+      "violation": "excessive_approval_layers",
+      "description": "Too many approval levels violates Agile 'simplicity' principle",
+      "detection_rule": "approval_levels > 3",
+      "threshold": "> 3 approval levels for standard requests",
+      "framework_basis": "Agile Principle: Simplicity - maximize work not done",
+      "optimization": "Consolidate approval levels, implement delegation rules",
+      "expected_improvement": "50-70% reduction in approval time"
+    },
+    {
+      "violation": "slow_feedback_loops",
+      "description": "Long approval times violate 'early and continuous delivery' principle",
+      "detection_rule": "approval_time > 5_days",
+      "threshold": "> 5 days for standard approvals",
+      "framework_basis": "Agile Principle: Early and continuous delivery of value",
+      "optimization": "Implement real-time approval notifications, parallel processing",
+      "expected_improvement": "60-80% faster feedback cycles"
+    },
+    {
+      "violation": "inflexible_process",
+      "description": "Cannot handle changes/exceptions violates 'responding to change'",
+      "detection_rule": "change_requires_restart == true",
+      "threshold": "Process restarts required for minor changes",
+      "framework_basis": "Agile Value: Responding to change over following a plan",
+      "optimization": "Build flexibility into process design",
+      "expected_improvement": "90% reduction in process restarts"
+    },
+    {
+      "violation": "poor_collaboration",
+      "description": "Lack of direct communication violates 'individuals and interactions'",
+      "detection_rule": "direct_communication_rate < 0.3",
+      "threshold": "< 30% of approvals involve direct stakeholder communication",
+      "framework_basis": "Agile Value: Individuals and interactions over processes and tools",
+      "optimization": "Enable direct approver-traveler communication channels",
+      "expected_improvement": "40% faster issue resolution"
+    }
+  ],
+  "operating_model_design_principles": {
+    "structure": "Flat hierarchies with clear decision rights",
+    "governance": "Lightweight governance focused on outcomes",
+    "processes": "Streamlined processes with built-in flexibility",
+    "culture": "Collaborative culture that embraces change",
+    "metrics": "Focus on business outcomes and customer satisfaction",
+    "decision_making": "Distributed decision-making with appropriate empowerment",
+    "communication": "Open, direct communication channels",
+    "adaptation": "Built-in mechanisms for continuous adaptation and improvement"
+  }
+}

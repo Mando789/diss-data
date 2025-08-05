@@ -1,0 +1,299 @@
+{
+  "metadata": {
+    "description": "AWS Lambda function configurations for multi-agent workflow optimization system",
+    "version": "1.0",
+    "deployment_target": "AWS Bedrock with Claude 3.5 Sonnet",
+    "architecture": "Serverless multi-agent system"
+  },
+  "lambda_functions": [
+    {
+      "function_name": "input-processing-agent",
+      "description": "Processes and normalizes workflow inputs from multiple sources",
+      "runtime": "python3.11",
+      "memory_size": 1024,
+      "timeout": 300,
+      "environment_variables": {
+        "BEDROCK_MODEL_ID": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+        "BEDROCK_REGION": "us-east-1",
+        "S3_BUCKET": "workflow-optimization-data",
+        "DYNAMODB_TABLE": "workflow-processing-state",
+        "FRAMEWORK_KNOWLEDGE_PATH": "framework_knowledge/",
+        "LOG_LEVEL": "INFO"
+      },
+      "iam_policies": [
+        "bedrock:InvokeModel",
+        "s3:GetObject",
+        "s3:PutObject",
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:UpdateItem",
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "layer_dependencies": [
+        "boto3-layer",
+        "pandas-layer",
+        "workflow-optimization-common"
+      ],
+      "handler": "input_processor.lambda_handler",
+      "deployment_package": {
+        "source_code": "src/agents/input_processor/",
+        "requirements": ["boto3", "pandas", "json-schema", "Pillow"],
+        "zip_file": "input-processing-agent.zip"
+      },
+      "concurrency_config": {
+        "reserved_concurrency": 20,
+        "provisioned_concurrency": 5
+      }
+    },
+    {
+      "function_name": "analysis-agent",
+      "description": "Performs multi-framework workflow analysis using Agile, Lean, and Operating Model principles",
+      "runtime": "python3.11", 
+      "memory_size": 2048,
+      "timeout": 600,
+      "environment_variables": {
+        "BEDROCK_MODEL_ID": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+        "BEDROCK_REGION": "us-east-1",
+        "S3_BUCKET": "workflow-optimization-data",
+        "DYNAMODB_TABLE": "workflow-processing-state",
+        "FRAMEWORK_KNOWLEDGE_PATH": "framework_knowledge/",
+        "AGILE_KNOWLEDGE_FILE": "agile_framework_knowledge.json",
+        "LEAN_KNOWLEDGE_FILE": "lean_framework_knowledge.json",
+        "OPERATING_MODEL_FILE": "operating_model_knowledge.json",
+        "DETECTION_RULES_FILE": "integrated_optimization_rules.json",
+        "LOG_LEVEL": "INFO"
+      },
+      "iam_policies": [
+        "bedrock:InvokeModel",
+        "s3:GetObject",
+        "s3:PutObject", 
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:UpdateItem",
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "layer_dependencies": [
+        "boto3-layer",
+        "numpy-layer",
+        "workflow-optimization-common"
+      ],
+      "handler": "analysis_agent.lambda_handler",
+      "deployment_package": {
+        "source_code": "src/agents/analysis_agent/",
+        "requirements": ["boto3", "numpy", "scipy", "json-schema"],
+        "zip_file": "analysis-agent.zip"
+      },
+      "concurrency_config": {
+        "reserved_concurrency": 15,
+        "provisioned_concurrency": 3
+      }
+    },
+    {
+      "function_name": "optimization-agent",
+      "description": "Generates specific improvement recommendations using integrated framework approach",
+      "runtime": "python3.11",
+      "memory_size": 1536,
+      "timeout": 450,
+      "environment_variables": {
+        "BEDROCK_MODEL_ID": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+        "BEDROCK_REGION": "us-east-1",
+        "S3_BUCKET": "workflow-optimization-data",
+        "DYNAMODB_TABLE": "workflow-processing-state",
+        "FRAMEWORK_KNOWLEDGE_PATH": "framework_knowledge/",
+        "OPTIMIZATION_RULES_FILE": "integrated_optimization_rules.json",
+        "ROI_CALCULATION_MODEL": "conservative",
+        "LOG_LEVEL": "INFO"
+      },
+      "iam_policies": [
+        "bedrock:InvokeModel",
+        "s3:GetObject",
+        "s3:PutObject",
+        "dynamodb:GetItem",
+        "dynamodb:PutItem", 
+        "dynamodb:UpdateItem",
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "layer_dependencies": [
+        "boto3-layer",
+        "workflow-optimization-common"
+      ],
+      "handler": "optimization_agent.lambda_handler",
+      "deployment_package": {
+        "source_code": "src/agents/optimization_agent/",
+        "requirements": ["boto3", "json-schema", "datetime"],
+        "zip_file": "optimization-agent.zip"
+      },
+      "concurrency_config": {
+        "reserved_concurrency": 10,
+        "provisioned_concurrency": 2
+      }
+    },
+    {
+      "function_name": "output-agent",
+      "description": "Formats optimization results in multiple professional formats",
+      "runtime": "python3.11",
+      "memory_size": 1024,
+      "timeout": 300,
+      "environment_variables": {
+        "BEDROCK_MODEL_ID": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+        "BEDROCK_REGION": "us-east-1",
+        "S3_BUCKET": "workflow-optimization-data",
+        "DYNAMODB_TABLE": "workflow-processing-state",
+        "OUTPUT_FORMATS": "executive_summary,detailed_analysis,implementation_guide,business_case",
+        "TEMPLATE_PATH": "output_templates/",
+        "LOG_LEVEL": "INFO"
+      },
+      "iam_policies": [
+        "bedrock:InvokeModel",
+        "s3:GetObject",
+        "s3:PutObject",
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:UpdateItem",
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "layer_dependencies": [
+        "boto3-layer",
+        "reportlab-layer",
+        "workflow-optimization-common"
+      ],
+      "handler": "output_agent.lambda_handler",
+      "deployment_package": {
+        "source_code": "src/agents/output_agent/",
+        "requirements": ["boto3", "reportlab", "jinja2", "markdown"],
+        "zip_file": "output-agent.zip"
+      },
+      "concurrency_config": {
+        "reserved_concurrency": 10,
+        "provisioned_concurrency": 2
+      }
+    },
+    {
+      "function_name": "orchestration-agent",
+      "description": "Coordinates multi-agent workflow and manages system state",
+      "runtime": "python3.11",
+      "memory_size": 512,
+      "timeout": 900,
+      "environment_variables": {
+        "BEDROCK_MODEL_ID": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+        "BEDROCK_REGION": "us-east-1",
+        "S3_BUCKET": "workflow-optimization-data",
+        "DYNAMODB_TABLE": "workflow-processing-state",
+        "INPUT_AGENT_FUNCTION": "input-processing-agent",
+        "ANALYSIS_AGENT_FUNCTION": "analysis-agent",
+        "OPTIMIZATION_AGENT_FUNCTION": "optimization-agent",
+        "OUTPUT_AGENT_FUNCTION": "output-agent",
+        "MAX_RETRY_ATTEMPTS": "3",
+        "QUALITY_THRESHOLD": "0.8",
+        "LOG_LEVEL": "INFO"
+      },
+      "iam_policies": [
+        "bedrock:InvokeModel",
+        "lambda:InvokeFunction",
+        "s3:GetObject",
+        "s3:PutObject",
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:UpdateItem",
+        "dynamodb:Scan",
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "layer_dependencies": [
+        "boto3-layer",
+        "workflow-optimization-common"
+      ],
+      "handler": "orchestration_agent.lambda_handler",
+      "deployment_package": {
+        "source_code": "src/agents/orchestration_agent/",
+        "requirements": ["boto3", "json-schema"],
+        "zip_file": "orchestration-agent.zip"
+      },
+      "concurrency_config": {
+        "reserved_concurrency": 5,
+        "provisioned_concurrency": 1
+      }
+    }
+  ],
+  "lambda_layers": [
+    {
+      "layer_name": "boto3-layer",
+      "description": "AWS SDK for Python",
+      "compatible_runtimes": ["python3.11"],
+      "license": "Apache-2.0",
+      "content": {
+        "zip_file": "layers/boto3-layer.zip",
+        "libraries": ["boto3", "botocore"]
+      }
+    },
+    {
+      "layer_name": "pandas-layer", 
+      "description": "Data analysis library for input processing",
+      "compatible_runtimes": ["python3.11"],
+      "license": "BSD",
+      "content": {
+        "zip_file": "layers/pandas-layer.zip",
+        "libraries": ["pandas", "numpy", "pytz"]
+      }
+    },
+    {
+      "layer_name": "numpy-layer",
+      "description": "Numerical computing library for analysis",
+      "compatible_runtimes": ["python3.11"],
+      "license": "BSD",
+      "content": {
+        "zip_file": "layers/numpy-layer.zip",
+        "libraries": ["numpy", "scipy"]
+      }
+    },
+    {
+      "layer_name": "reportlab-layer",
+      "description": "PDF generation library for output formatting",
+      "compatible_runtimes": ["python3.11"],
+      "license": "BSD",
+      "content": {
+        "zip_file": "layers/reportlab-layer.zip",
+        "libraries": ["reportlab", "Pillow"]
+      }
+    },
+    {
+      "layer_name": "workflow-optimization-common",
+      "description": "Common utilities and framework knowledge for all agents",
+      "compatible_runtimes": ["python3.11"],
+      "license": "MIT",
+      "content": {
+        "zip_file": "layers/workflow-optimization-common.zip",
+        "modules": ["framework_utils", "workflow_schemas", "common_validators", "logging_config"]
+      }
+    }
+  ],
+  "deployment_configuration": {
+    "deployment_method": "AWS SAM",
+    "infrastructure_as_code": "template.yaml",
+    "environment_stages": ["dev", "staging", "prod"],
+    "monitoring": {
+      "cloudwatch_logs": true,
+      "xray_tracing": true,
+      "custom_metrics": ["processing_time", "accuracy_score", "quality_metrics"],
+      "alarms": ["error_rate", "duration", "throttles"]
+    },
+    "security": {
+      "execution_role": "lambda-execution-role",
+      "vpc_config": {
+        "subnet_ids": ["subnet-private-1", "subnet-private-2"],
+        "security_group_ids": ["sg-lambda-functions"]
+      },
+      "environment_encryption": "AWS_KMS",
+      "secrets_management": "AWS_SECRETS_MANAGER"
+    }
+  }
+}
