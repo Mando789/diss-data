@@ -1,7 +1,7 @@
 # RAG-Enhanced Workflow Optimization System
 ## AI-Powered Travel & Accommodation Process Analysis
 
-// This system specializes in analyzing travel and accommodation workflows using RAG-enhanced AI to provide evidence-based optimization recommendations with agile and lean framework scoring.
+This system specializes in analyzing travel and accommodation workflows using RAG-enhanced AI to provide evidence-based optimization recommendations with agile and lean framework scoring.
 
 ## System Overview
 
@@ -49,7 +49,7 @@ The system benchmarks user workflows against similar efficient processes from th
 
 **Dynamic Processing** (`pdf_processor.py`):
 ```
-// Drag-and-drop functionality: New documents added to real_documents/ folder are automatically processed and integrated into the RAG system during analysis
+Drag-and-drop functionality: New documents added to real_documents/ folder are automatically processed and integrated into the RAG system during analysis
 ```
 
 ### 3. Similarity Matching Engine
@@ -326,5 +326,6 @@ python -c "from rag_system import BPIRAGSystem; rag = BPIRAGSystem('data/bpi_rag
 - S3 bucket with appropriate IAM policies
 - CloudWatch for monitoring and logging
 - Application Load Balancer for scaling
+
 
 This system represents a significant advancement in AI-assisted process optimization, combining rigorous academic methodology with practical cloud-native implementation for real-world business process improvement.
