@@ -1,0 +1,150 @@
+{
+  "started": "2025-09-15T02:49:55.476899",
+  "documents_processed": [
+    {
+      "original_file": "real_documents/bcg/bcg_transformation_methodology_2016.pdf",
+      "processed_file": "real_documents/processed/bcg_transformation_methodology_2016_processed.json",
+      "word_count": 43709,
+      "pages": 167
+    },
+    {
+      "original_file": "real_documents/bcg/bcg_agile_transformation_management_2019.pdf",
+      "processed_file": "real_documents/processed/bcg_agile_transformation_management_2019_processed.json",
+      "word_count": 2716,
+      "pages": 6
+    },
+    {
+      "original_file": "real_documents/academic/business_process_mining_survey_2021.pdf",
+      "processed_file": "real_documents/processed/business_process_mining_survey_2021_processed.json",
+      "word_count": 19133,
+      "pages": 58
+    },
+    {
+      "original_file": "real_documents/dissertation_research_papers/academic_papers_2024/critical_success_factors_in_large_scale_agile_software_development.pdf",
+      "processed_file": "real_documents/processed/critical_success_factors_in_large_scale_agile_software_development_processed.json",
+      "word_count": 7396,
+      "pages": 10
+    },
+    {
+      "original_file": "real_documents/dissertation_research_papers/academic_papers/business_process_mining_survey_2021.pdf",
+      "processed_file": "real_documents/processed/business_process_mining_survey_2021_processed.json",
+      "word_count": 19133,
+      "pages": 58
+    },
+    {
+      "original_file": "real_documents/dissertation_research_papers/consulting_frameworks_2024/from_agile_experiments_to_operating_model_transformation.pdf",
+      "processed_file": "real_documents/processed/from_agile_experiments_to_operating_model_transformation_processed.json",
+      "word_count": 16504,
+      "pages": 42
+    },
+    {
+      "original_file": "real_documents/dissertation_research_papers/consulting_frameworks_2024/transforming_for_growth_an_evidence_based_guide.pdf",
+      "processed_file": "real_documents/processed/transforming_for_growth_an_evidence_based_guide_processed.json",
+      "word_count": 4125,
+      "pages": 9
+    },
+    {
+      "original_file": "real_documents/dissertation_research_papers/consulting_frameworks_2024/agile_transformation_survey.pdf",
+      "processed_file": "real_documents/processed/agile_transformation_survey_processed.json",
+      "word_count": 16690,
+      "pages": 42
+    },
+    {
+      "original_file": "real_documents/dissertation_research_papers/consulting_frameworks_2024/overcoming_the_agile_operating_model_challenges.pdf",
+      "processed_file": "real_documents/processed/overcoming_the_agile_operating_model_challenges_processed.json",
+      "word_count": 2309,
+      "pages": 9
+    },
+    {
+      "original_file": "real_documents/dissertation_research_papers/bpi_challenge_2020/ICPM_2020_paper_99.pdf",
+      "processed_file": "real_documents/processed/ICPM_2020_paper_99_processed.json",
+      "word_count": 9731,
+      "pages": 39
+    },
+    {
+      "original_file": "real_documents/dissertation_research_papers/consulting_frameworks/bcg_transformation_methodology_2016.pdf",
+      "processed_file": "real_documents/processed/bcg_transformation_methodology_2016_processed.json",
+      "word_count": 43709,
+      "pages": 167
+    },
+    {
+      "original_file": "real_documents/dissertation_research_papers/consulting_frameworks/mckinsey_hr_new_operating_model_2024.pdf",
+      "processed_file": "real_documents/processed/mckinsey_hr_new_operating_model_2024_processed.json",
+      "word_count": 2674,
+      "pages": 7
+    },
+    {
+      "original_file": "real_documents/dissertation_research_papers/consulting_frameworks/mckinsey_scaling_next_gen_operating_model_2024.pdf",
+      "processed_file": "real_documents/processed/mckinsey_scaling_next_gen_operating_model_2024_processed.json",
+      "word_count": 41373,
+      "pages": 111
+    },
+    {
+      "original_file": "real_documents/dissertation_research_papers/consulting_frameworks/bcg_agile_transformation_management_2019.pdf",
+      "processed_file": "real_documents/processed/bcg_agile_transformation_management_2019_processed.json",
+      "word_count": 2716,
+      "pages": 6
+    },
+    {
+      "original_file": "real_documents/dissertation_research_papers/consulting_frameworks/deloitte_digital_transformation_series_15_2024.pdf",
+      "processed_file": "real_documents/processed/deloitte_digital_transformation_series_15_2024_processed.json",
+      "word_count": 5346,
+      "pages": 16
+    },
+    {
+      "original_file": "real_documents/dissertation_research_papers/consulting_frameworks/mckinsey_next_generation_operating_model_2024.pdf",
+      "processed_file": "real_documents/processed/mckinsey_next_generation_operating_model_2024_processed.json",
+      "word_count": 40610,
+      "pages": 127
+    },
+    {
+      "original_file": "real_documents/mckinsey/mckinsey_hr_new_operating_model_2024.pdf",
+      "processed_file": "real_documents/processed/mckinsey_hr_new_operating_model_2024_processed.json",
+      "word_count": 2674,
+      "pages": 7
+    },
+    {
+      "original_file": "real_documents/mckinsey/mckinsey_scaling_next_gen_operating_model_2024.pdf",
+      "processed_file": "real_documents/processed/mckinsey_scaling_next_gen_operating_model_2024_processed.json",
+      "word_count": 41373,
+      "pages": 111
+    },
+    {
+      "original_file": "real_documents/mckinsey/mckinsey_next_generation_operating_model_2024.pdf",
+      "processed_file": "real_documents/processed/mckinsey_next_generation_operating_model_2024_processed.json",
+      "word_count": 40610,
+      "pages": 127
+    },
+    {
+      "original_file": "real_documents/deloitte/deloitte_digital_transformation_series_15_2024.pdf",
+      "processed_file": "real_documents/processed/deloitte_digital_transformation_series_15_2024_processed.json",
+      "word_count": 5346,
+      "pages": 16
+    },
+    {
+      "original_file": "real_documents/bpi_challenge_2020_papers/ICPM_2020_paper_99.pdf",
+      "processed_file": "real_documents/processed/ICPM_2020_paper_99_processed.json",
+      "word_count": 9731,
+      "pages": 39
+    }
+  ],
+  "processing_errors": [
+    {
+      "file_path": "real_documents/academic/safe_scaled_agile_framework_lean_engineering_4_0.pdf",
+      "error": "Failed to process real_documents/academic/safe_scaled_agile_framework_lean_engineering_4_0.pdf: No /Root object! - Is this really a PDF?",
+      "timestamp": "2025-09-15T02:50:28.338544"
+    },
+    {
+      "file_path": "real_documents/dissertation_research_papers/academic_papers/safe_scaled_agile_framework_lean_engineering_4_0.pdf",
+      "error": "Failed to process real_documents/dissertation_research_papers/academic_papers/safe_scaled_agile_framework_lean_engineering_4_0.pdf: No /Root object! - Is this really a PDF?",
+      "timestamp": "2025-09-15T02:50:46.668692"
+    }
+  ],
+  "extraction_stats": {
+    "total_documents": 23,
+    "successful_extractions": 21,
+    "total_pages_processed": 1174,
+    "total_words_extracted": 377608
+  },
+  "completed": "2025-09-15T02:54:05.357448"
+}
