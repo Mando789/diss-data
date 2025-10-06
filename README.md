@@ -293,8 +293,6 @@ python -c "from rag_system import BPIRAGSystem; rag = BPIRAGSystem('data/bpi_rag
 
 ## Future Work & Challenges
 
-// Based on dissertation analysis (Dissertation.docx), key areas for development include:
-
 ### Technical Enhancements
 - **Real-time Processing**: Stream processing for continuous workflow monitoring
 - **Multi-domain Expansion**: Extension beyond travel/accommodation to general business processes
@@ -329,3 +327,4 @@ python -c "from rag_system import BPIRAGSystem; rag = BPIRAGSystem('data/bpi_rag
 
 
 This system represents a significant advancement in AI-assisted process optimization, combining rigorous academic methodology with practical cloud-native implementation for real-world business process improvement.
+
